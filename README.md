@@ -114,3 +114,7 @@ git push -u origin main
 在项目 Settings → Git 中确认 Production Branch 为 `main`。此后推送 main 自动部署生产版本，其他分支及 PR 生成预览部署，无需另外配置 GitHub Actions 或 Vercel Token。学习记录按域名隔离，切换到正式域名前先导出备份。
 
 参考：[Vercel GitHub 集成](https://vercel.com/docs/git/vercel-for-github)、[Vite 部署](https://vercel.com/docs/frameworks/frontend/vite)。
+
+### GitHub Pages
+
+`.github/workflows/deploy-pages.yml` 会在推送到 `main` 或手动触发时运行：使用 Node.js 22 执行 `npm ci` 和 `npm run build`，然后将 `dist/` 发布到 GitHub Pages。无需配置密钥。首次启用时，在 GitHub 仓库 Settings → Pages → Build and deployment 中将 Source 设为 **GitHub Actions**；之后可在 Actions 页面查看部署结果及站点地址。`base: './'` 支持 Pages 的仓库子路径。
