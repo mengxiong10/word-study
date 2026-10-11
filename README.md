@@ -44,7 +44,6 @@ npm run preview
 
 ```sh
 npm run lint
-npm run format:check
 npm run typecheck
 npm run check:content
 npm test
@@ -78,7 +77,6 @@ ESLint 检查 TypeScript、React Hooks 和热更新导出；Prettier 统一格�
 npm run lint
 npm run lint:fix
 npm run format
-npm run format:check
 ```
 
 `npm install` / `npm ci` 自动通过 `prepare` 安装 Husky hooks。提交前由 lint-staged 对暂存的代码执行 ESLint 修复和 Prettier 格式化，错误会阻止提交；推送前执行类型检查和单元测试。`.husky/` 中的 hook 文件随源码提交。

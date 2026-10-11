@@ -13,7 +13,6 @@
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
-    "format:check": "prettier . --check",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
     "test:pwa": "node scripts/pwa-check.mjs"
